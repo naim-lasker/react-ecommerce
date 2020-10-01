@@ -1,0 +1,32 @@
+// Including bootstrap
+@import "bootstrap/bootstrap.scss";
+
+// Including variables and mixins
+@import "partial/fonts";
+@import "partial/variables";
+@import "partial/mixins";
+@import "partial/reset";
+@import "partial/predefined";
+@import "partial/header";
+@import "partial/sidebar";
+@import "partial/footer";
+@import "partial/override";
+
+
+
+
+// Component Scss
+@import "components/table";
+@import "components/tab";
+@import "components/breadcrumb";
+@import "components/pagination";
+@import "components/button";
+@import "components/input";
+
+
+// Public Scss
+@import "layout/public/home";
+
+
+// Customer Scss
+@import "layout/customer/dashboard";
