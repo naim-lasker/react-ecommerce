@@ -1,0 +1,199 @@
+//--------- Start Banner Area -------------//
+.public-single-product {
+    position: relative;
+    font-family: $title-font;
+    font-size: 14px;
+    color: $text-color;
+    transition: 0.3s ease-in all;
+    margin-bottom: 30px;
+    &:hover {
+        .public-product-action,
+        .public-product-action-vertical {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .public-product-media {
+        position: relative;
+        margin-bottom: 0;
+        transition: box-shadow 0.3s;
+    }
+
+    .public-product-label-group {
+        position: absolute;
+        left: 20px;
+        top: 22px;
+        max-width: 320px;
+    }
+
+    .public-product-label {
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 6px;
+        padding: 6px 15px;
+        font-size: 11px;
+        border-radius: 2px;
+        font-weight: 600;
+        line-height: 1;
+        color: #fff;
+        text-transform: uppercase;
+        &.public-label-new {
+            background-color: $primary-color;
+        }
+    }
+
+    .public-product-action-vertical {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        transition: opacity 0.3s, visibility 0.3s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .public-btn-product-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 6px;
+        border: 1px solid #e1e1e1;
+        border-radius: 50%;
+        background-color: white;
+        color: #999;
+        font-size: 16px;
+        font-weight: 600;
+        transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+        &:hover {
+            background-color: $primary-color;
+            color: $white;
+            border: 1px solid $primary-color;
+        }
+    }
+
+    .public-product-action {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        z-index: 10;
+        transition: opacity 0.3s, visibility 0.3s;
+        opacity: 0;
+    }
+
+    .public-product-info {
+        position: relative;
+        padding-top: 20px;
+    }
+
+    .public-btn-wishlist {
+        position: absolute;
+        top: 14px;
+        right: 1px;
+        color: #999;
+        z-index: 1;
+        font-size: 15px;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    .public-product-cat {
+        font-size: 11px;
+        font-weight: 400;
+        text-transform: uppercase;
+        a {
+            color: $text-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .public-product-name {
+        margin-bottom: 0.6rem;
+        font-family: $title-font;
+        font-size: 16px;
+        font-weight: 400;
+        color: #222;
+        padding-right: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        a {
+            color: $title-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .public-product-price {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 0.6rem;
+        font-size: 20px;
+        font-weight: 600;
+        color: #222;
+        .public-new-price {
+            margin-right: 1rem;
+            text-decoration: none;
+        }
+        .public-old-price {
+            color: $text-color2;
+        }
+    }
+
+    .public-ratings-container {
+        display: flex;
+        align-items: center;
+        margin-left: 1px;
+        line-height: 1;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+    }
+
+    .public-ratings-full {
+        color: $rating;
+        font-size: 13px;
+        svg {
+            margin-right: 2px;
+        }
+    }
+
+    .public-rating-reviews {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 11px;
+        color: $text-color;
+        letter-spacing: 0;
+        text-transform: uppercase;
+    }
+    .public-btn-product {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        padding: 1.14em 0;
+        background-color: #26b;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        text-transform: uppercase;
+        transition: opacity 0.3s;
+    }
+    .public-btn-quickview {
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+}
+//----------- End Banner Area -------------//

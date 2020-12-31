@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import HomeBanner from '../../../components/Public/Home/Banner'
+import AllProduct from '../Product/AllProduct'
 
 const Home = () => {
     return (
-        <HomeBanner />
+        <Fragment>
+            <HomeBanner />
+            <AllProduct />
+        </Fragment>
     )
 }
 
