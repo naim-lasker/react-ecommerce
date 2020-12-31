@@ -3,13 +3,13 @@ import React from 'react'
 const Header = () => {
     return (
         <header className='header-area'>
-            <div className='container'>
-                <div className='header-top d-flex'>
+            <div className='header-top'>
+                <div className='container d-flex'>
                     <div className='header-top-left'>
-                        <p>Welcome to E-commerce</p>
+                        <p className='m-0 text-uppercase'>Welcome to E-commerce</p>
                     </div>
                     <div className='header-top-right ml-auto'>
-                        <ul className='d-flex'>
+                        <ul className='d-flex m-0'>
                             <li>
                                 <a href='/'>About</a>
                             </li>
