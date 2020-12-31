@@ -11,9 +11,9 @@ const AllProduct = () => {
 
                 <div className='row justify-content-center'>
                     {
-                        data.products.map(item =>
-                            <div key={item.id} className='col-lg-3 col-md-6'>
-                                <SingleProduct item={item} />
+                        data.products.map(product =>
+                            <div key={product.id} className='col-lg-3 col-md-6'>
+                                <SingleProduct product={product} />
                             </div>
                         )
                     }
