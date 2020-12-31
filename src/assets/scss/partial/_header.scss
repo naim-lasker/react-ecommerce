@@ -5,7 +5,54 @@
     .header-top {
         font-family: $title-font;
         background-color: $offwhite;
-        padding: 3px 0;
+        padding: 2.5px 0;
+    }
+
+    .header-top-left {
+        p {
+            font-family: $title-font;
+            font-size: 11px;
+        }
+    }
+    .header-top-right {
+        ul {
+            list-style: none;
+            li {
+                margin-right: 20px;
+                a {
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    color: $text-color;
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-bottom {
+        padding: 10px 0;
+        .navbar-brand {
+            margin-right: 40px;
+            img {
+                max-width: 110px;
+            }
+        }
+        .navbar-nav {
+            .nav-link {
+                font-size: 12px;
+                position: relative;
+                padding: 14px 0;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-right: 23px;
+                color: $title-color;
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
     }
 }
 /*--------------------------------------------------------------

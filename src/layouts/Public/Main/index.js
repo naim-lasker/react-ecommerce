@@ -7,9 +7,7 @@ const Main = ({ children }) => {
     return (
         <Fragment>
             <Header />
-            <div className="container">
-                {children}
-            </div>
+            {children}
             <Footer />
         </Fragment>
     )

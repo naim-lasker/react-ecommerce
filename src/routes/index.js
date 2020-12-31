@@ -6,6 +6,7 @@ import browserHistory from "./History"
 import RouteWithLayout from "./RouteWithLayout"
 import PublicMain from "../layouts/Public/Main"
 
+import Home from "../pages/Public/Home"
 import Login from "../pages/Public/Login"
 
 
@@ -14,6 +15,13 @@ const Routes = () => {
     return (
         <Router history={browserHistory}>
             <Switch>
+                <RouteWithLayout
+                    component={Home}
+                    exact
+                    layout={PublicMain}
+                    path='/'
+                    title='Home'
+                />
                 <RouteWithLayout
                     component={Login}
                     exact
