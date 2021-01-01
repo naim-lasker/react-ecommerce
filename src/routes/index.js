@@ -8,6 +8,7 @@ import PublicMain from "../layouts/Public/Main"
 
 import Home from "../pages/Public/Home"
 import Login from "../pages/Public/Login"
+import ProductDetails from "../pages/Public/Product/ProductDetails"
 
 
 const Routes = () => {
@@ -16,6 +17,13 @@ const Routes = () => {
         <Router history={browserHistory}>
             <Switch>
                 <RouteWithLayout
+                    component={Login}
+                    exact
+                    layout={PublicMain}
+                    path='/login'
+                    title='Login'
+                />
+                <RouteWithLayout
                     component={Home}
                     exact
                     layout={PublicMain}
@@ -23,11 +31,11 @@ const Routes = () => {
                     title='Home'
                 />
                 <RouteWithLayout
-                    component={Login}
+                    component={ProductDetails}
                     exact
                     layout={PublicMain}
-                    path='/login'
-                    title='Login'
+                    path='/product/:id'
+                    title='Home'
                 />
             </Switch>
         </Router>

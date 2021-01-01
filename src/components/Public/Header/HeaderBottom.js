@@ -7,7 +7,7 @@ const HeaderBottom = () => {
         <div className='header-bottom'>
             <div className='container'>
                 <Navbar expand="lg" className='p-0'>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/">
                         <img src='/images/logo.png' />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

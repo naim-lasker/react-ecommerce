@@ -6,38 +6,38 @@ const ProductRating = ({ rating }) => {
         <>
             {
                 rating >= 1 ?
-                    <TiStarFullOutline /> :
+                    <TiStarFullOutline color='#d26e4b' /> :
                     rating >= 0.5 ?
-                        <TiStarHalfOutline /> :
-                        <TiStarOutline />
+                        <TiStarHalfOutline color='#d26e4b' /> :
+                        <TiStarOutline color='#d26e4b' />
             }
             {
                 rating >= 2 ?
-                    <TiStarFullOutline /> :
+                    <TiStarFullOutline color='#d26e4b' /> :
                     rating >= 1.5 ?
-                        <TiStarHalfOutline /> :
-                        <TiStarOutline />
+                        <TiStarHalfOutline color='#d26e4b' /> :
+                        <TiStarOutline color='#d26e4b' />
             }
             {
                 rating >= 3 ?
-                    <TiStarFullOutline /> :
+                    <TiStarFullOutline color='#d26e4b' /> :
                     rating >= 2.5 ?
-                        <TiStarHalfOutline /> :
-                        <TiStarOutline />
+                        <TiStarHalfOutline color='#d26e4b' /> :
+                        <TiStarOutline color='#d26e4b' />
             }
             {
                 rating >= 4 ?
-                    <TiStarFullOutline /> :
+                    <TiStarFullOutline color='#d26e4b' /> :
                     rating >= 3.5 ?
-                        <TiStarHalfOutline /> :
-                        <TiStarOutline />
+                        <TiStarHalfOutline color='#d26e4b' /> :
+                        <TiStarOutline color='#d26e4b' />
             }
             {
                 rating >= 5 ?
-                    <TiStarFullOutline /> :
+                    <TiStarFullOutline color='#d26e4b' /> :
                     rating >= 4.5 ?
-                        <TiStarHalfOutline /> :
-                        <TiStarOutline />
+                        <TiStarHalfOutline color='#d26e4b' /> :
+                        <TiStarOutline color='#d26e4b' />
             }
         </>
     )
