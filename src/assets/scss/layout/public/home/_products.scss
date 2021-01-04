@@ -172,7 +172,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: 11px;
-        color: $text-color;
+        color: $rating;
         letter-spacing: 0;
         text-transform: uppercase;
     }
@@ -228,6 +228,21 @@
         font-weight: 600;
         letter-spacing: -0.6px;
         line-height: 1.2;
+    }
+    .public-product-details-desc {
+        max-width: 520px;
+    }
+
+    .public-ratings-container {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        // letter-spacing: 0.2em;
+    }
+
+    .public-quantity-container {
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
     }
 }
 //----------- End Product Deatils Area -------------//

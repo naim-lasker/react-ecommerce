@@ -68,9 +68,23 @@ h6 {
 	color: $title-color;
 }
 
-button:focus {
-	outline: none;
-	box-shadow: none;
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+button {
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
 }
 
 .mb-20 {

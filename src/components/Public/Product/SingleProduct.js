@@ -16,7 +16,7 @@ const SingleProduct = ({ product }) => {
 
             <figure className="public-product-media">
                 <a href={`/product/${product.id}`}>
-                    <img src={product.img} alt={product.name} className='img-fluid w-100' height="315" />
+                    <img src={product.img[0]} alt={product.name} className='img-fluid w-100' height="315" />
                 </a>
 
                 {
@@ -64,22 +64,7 @@ const SingleProduct = ({ product }) => {
                     }
                 </div>
 
-                <div className="public-ratings-container">
-                    {
-                        product.numReviews > 0 &&
-                        <div className="public-ratings-full mr-2">
-                            <ProductRating rating={product.rating} />
-                        </div>
-                    }
-
-                    <span className="public-rating-reviews">
-                        {
-                            product.numReviews > 0 ?
-                                `( ${product.numReviews} ${product.numReviews > 1 ? 'reviews' : 'review'} )` :
-                                '(No reviews)'
-                        }
-                    </span>
-                </div>
+                <ProductRating rating={product.rating} numReviews={product.numReviews} />
             </div>
         </div>
     )
