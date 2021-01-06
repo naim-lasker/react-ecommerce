@@ -4,6 +4,7 @@ import { FaFacebookF, FaHeart, FaInstagram, FaMinus, FaPlus, FaShoppingCart, FaT
 import ProductRating from '../../../components/Public/Product/Rating'
 import { data } from '../../../data'
 import { formatAmount } from '../../../helpers/common'
+import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, FacebookShareCount, InstapaperIcon, InstapaperShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share'
 
 
 const ProductDetails = props => {
@@ -75,7 +76,7 @@ const ProductDetails = props => {
                             <div className='mt-4 py-3 d-flex align-items-center public-quantity-container'>
                                 <h5 className='m-0 mr-4'>Quantity</h5>
                                 <div className="d-flex align-items-center mr-4">
-                                    <Button variant="light" className='quantity-count-button' size="sm" onClick={decreaseQuantity}>
+                                    <Button variant="light" className='quantity-count-button' disabled={quantity <= 1 ? true : false} size="sm" onClick={decreaseQuantity}>
                                         <FaMinus />
                                     </Button>
                                     <input
@@ -83,6 +84,7 @@ const ProductDetails = props => {
                                         type="number"
                                         min="1"
                                         max="1000000"
+                                        readOnly
                                         value={quantity}
                                         onChange={event => setQuantity(event.target.value)}
                                     />
@@ -97,19 +99,47 @@ const ProductDetails = props => {
                             </div>
 
                             <div className='mt-5 d-flex align-items-center justify-content-between'>
-                                <div className='social-share'>
-                                    <button>
-                                        <FaFacebookF className='single-social-share' />
-                                    </button>
-                                    <button>
-                                        <FaTwitter className='single-social-share' />
-                                    </button>
-                                    <button>
-                                        <FaInstagram className='single-social-share' />
-                                    </button>
-                                    <button>
-                                        <FaYoutube className='single-social-share' />
-                                    </button>
+                                <div>
+                                    <FacebookShareButton
+                                        title='Share in Facebook'
+                                        url={"http://www.camperstribe.com"}
+                                        quote={"CampersTribe - World is yours to explore"}
+                                        hashtag="#camperstribe"
+                                        className='mr-2'
+                                    >
+                                        <FacebookIcon size={28} />
+                                    </FacebookShareButton>
+
+                                    <TwitterShareButton
+                                        title='Share in Twitter'
+                                        url={"http://www.camperstribe.com"}
+                                        quote={"CampersTribe - World is yours to explore"}
+                                        hashtag="#camperstribe"
+                                        className='mr-2'
+                                    >
+                                        <TwitterIcon size={28} />
+                                    </TwitterShareButton>
+
+                                    <LinkedinShareButton
+                                        title='Share in LinkedIn'
+                                        url={"http://www.camperstribe.com"}
+                                        quote={"CampersTribe - World is yours to explore"}
+                                        hashtag="#camperstribe"
+                                        className='mr-2'
+                                    >
+                                        <LinkedinIcon size={28} />
+                                    </LinkedinShareButton>
+
+                                    <EmailShareButton
+                                        title='Share in Email'
+                                        url={"http://www.camperstribe.com"}
+                                        quote={"CampersTribe - World is yours to explore"}
+                                        hashtag="#camperstribe"
+                                        className='mr-2'
+                                    >
+                                        <EmailIcon size={28} />
+                                    </EmailShareButton>
+
                                 </div>
 
                                 <div>
