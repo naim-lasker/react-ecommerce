@@ -9,6 +9,7 @@ import PublicMain from "../layouts/Public/Main"
 import Home from "../pages/Public/Home"
 import Login from "../pages/Public/Login"
 import ProductDetails from "../pages/Public/Product/ProductDetails"
+import Cart from "../pages/Public/Cart"
 
 
 const Routes = () => {
@@ -35,7 +36,14 @@ const Routes = () => {
                     exact
                     layout={PublicMain}
                     path='/product/:id'
-                    title='Home'
+                    title='Product Details'
+                />
+                <RouteWithLayout
+                    component={Cart}
+                    exact
+                    layout={PublicMain}
+                    path='/cart'
+                    title='Cart'
                 />
             </Switch>
         </Router>

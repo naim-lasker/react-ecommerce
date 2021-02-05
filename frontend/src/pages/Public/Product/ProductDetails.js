@@ -1,19 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Nav, Row, Tab } from 'react-bootstrap'
 import { FaHeart, FaMinus, FaPlus, FaShoppingCart } from 'react-icons/fa'
 import ProductRating from '../../../components/Public/Product/Rating'
-import { data } from '../../../data'
 import { formatAmount } from '../../../helpers/common'
 import {
     EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton,
     LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton
 } from 'react-share'
+import { useDispatch, useSelector } from 'react-redux'
+import { detailsProducts } from '../../../redux/actions/productAction'
 
 
 const ProductDetails = props => {
-    const product = data.products.find(item => item.id == props.match.params.id)
+    const dispatch = useDispatch()
+
+    const productId = props.match.params.id
+    const productDetails = useSelector(state => state.productDetails)
+
+    const { loading, error, product } = productDetails
+
+    console.log('loading', loading);
+
     const [quantity, setQuantity] = useState(1)
     const currentUrl = window.location.href
+
+    useEffect(() => {
+        dispatch(detailsProducts(productId))
+    }, [dispatch, productId])
 
     const decreaseQuantity = () => {
         setQuantity(quantity => Number(quantity) - 1)
@@ -27,8 +40,16 @@ const ProductDetails = props => {
         return <div>Product not found</div>
     }
 
-    return (
-        <section className='section-gap public-product-details'>
+
+    const addToCart = () => {
+        if (quantity > product.stock) {
+            return alert(`Stock is limited. You can only add ${product.stock} item to your cart`)
+        }
+    }
+
+
+    const renderProduct = () => {
+        return (
             <Container>
                 <Row>
                     <Col lg={6} className='d-flex'>
@@ -85,40 +106,49 @@ const ProductDetails = props => {
 
                             <ProductRating rating={product.rating} numReviews={product.numReviews} />
 
-                            <div
-                                className='mt-4 py-3 d-flex flex-column flex-sm-row align-items-center public-quantity-container'>
-                                <h5 className='m-0 mr-xl-4 mr-2 mb-sm-0 mb-3'>Quantity</h5>
-                                <div className="d-flex align-items-center mr-xl-4 mr-2 mb-sm-0 mb-3">
+                            <div className="mt-3 text-warning font-weight-bold">
+                                {product.stock <= 0 && 'Out of stock'}
+                            </div>
+
+                            {
+                                product.stock > 0 &&
+                                <div
+                                    className='mt-4 py-3 d-flex flex-column flex-sm-row align-items-center public-quantity-container'>
+                                    <h5 className='m-0 mr-xl-4 mr-2 mb-sm-0 mb-3'>Quantity</h5>
+                                    <div className="d-flex align-items-center mr-xl-4 mr-2 mb-sm-0 mb-3">
+                                        <Button
+                                            variant="light"
+                                            className='quantity-count-button'
+                                            disabled={quantity <= 1 ? true : false}
+                                            size="sm"
+                                            onClick={decreaseQuantity}>
+                                            <FaMinus />
+                                        </Button>
+                                        <input
+                                            className="form-control quantity-count-input"
+                                            type="number"
+                                            min="1"
+                                            max="1000000"
+                                            readOnly
+                                            value={quantity}
+                                            onChange={event => setQuantity(event.target.value)}
+                                        />
+                                        <Button
+                                            variant="light"
+                                            className='quantity-count-button'
+                                            size="sm"
+                                            onClick={increaseQuantity}>
+                                            <FaPlus />
+                                        </Button>
+                                    </div>
                                     <Button
-                                        variant="light"
-                                        className='quantity-count-button'
-                                        disabled={quantity <= 1 ? true : false}
-                                        size="sm"
-                                        onClick={decreaseQuantity}>
-                                        <FaMinus />
-                                    </Button>
-                                    <input
-                                        className="form-control quantity-count-input"
-                                        type="number"
-                                        min="1"
-                                        max="1000000"
-                                        readOnly
-                                        value={quantity}
-                                        onChange={event => setQuantity(event.target.value)}
-                                    />
-                                    <Button
-                                        variant="light"
-                                        className='quantity-count-button'
-                                        size="sm"
-                                        onClick={increaseQuantity}>
-                                        <FaPlus />
+                                        className='primary-button'
+                                        onClick={addToCart}>
+                                        <FaShoppingCart />
+                                        <span className='ml-3'>Add to cart</span>
                                     </Button>
                                 </div>
-                                <Button className='primary-button'>
-                                    <FaShoppingCart />
-                                    <span className='ml-3'>Add to cart</span>
-                                </Button>
-                            </div>
+                            }
 
                             <div
                                 className='mt-sm-5 mt-4 d-flex flex-column-reverse flex-sm-row align-items-center justify-content-sm-between justify-content-center'>
@@ -176,6 +206,18 @@ const ProductDetails = props => {
                     </Col>
                 </Row>
             </Container>
+        )
+    }
+
+    return (
+        <section className='section-gap public-product-details'>
+            {
+                loading ?
+                    <h2>Loading...</h2> :
+                    error ?
+                        <h2>Error...</h2> :
+                        renderProduct()
+            }
         </section>
     )
 }
