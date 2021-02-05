@@ -1,35 +1,25 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProducts } from '../../../redux/actions/productAction'
 import SingleProduct from '../../../components/Public/Product/SingleProduct'
 import MainTitle from '../../../components/UI/Title/MainTitle'
 
 
 const AllProduct = () => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState('')
+    const dispatch = useDispatch()
+
+    const productList = useSelector(state => state.productList)
+    const { loading, error, products } = productList
 
     useEffect(() => {
-        fetchProducts()
-    }, [])
+        dispatch(listProducts())
+    }, [dispatch])
 
-    const fetchProducts = async () => {
-        try {
-            setLoading(true)
-            const { data } = await axios.get('/api/products')
-            setProducts(data)
-            setLoading(false)
-
-        } catch (err) {
-            setLoading(false)
-            setError(err.message)
-        }
-    }
 
     const renderProducts = () => {
 
         return (
-            products.length > 0 ? products.map(product =>
+            products && products.length > 0 ? products.map(product =>
                 <div key={product.id} className='col-xl-3 col-lg-4 col-md-6'>
                     <SingleProduct product={product} />
                 </div>

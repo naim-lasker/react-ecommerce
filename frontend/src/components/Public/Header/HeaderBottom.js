@@ -8,7 +8,7 @@ const HeaderBottom = () => {
             <div className='container'>
                 <Navbar expand="lg" className='p-0'>
                     <Navbar.Brand href="/">
-                        <img src='/images/logo.png' />
+                        <img src='/images/logo.png' alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

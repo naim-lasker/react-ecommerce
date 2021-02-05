@@ -1,9 +1,8 @@
-import { data } from "../../data"
+import { combineReducers } from "redux"
+import { productListReducer } from "./productReducer"
 
-const redeucer = (state, action) => {
-    return {
-        products: data.products
-    }
-}
+const rootReducer = combineReducers({
+    productList: productListReducer
+})
 
-export default redeucer
+export default rootReducer
