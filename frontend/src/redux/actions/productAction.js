@@ -1,3 +1,4 @@
+import httpRequest from '../../helpers/request'
 import {
     PRUDUCT_LIST_FAIL,
     PRUDUCT_LIST_REQUEST,
@@ -5,8 +6,7 @@ import {
     PRUDUCT_DETAILS_FAIL,
     PRUDUCT_DETAILS_REQUEST,
     PRUDUCT_DETAILS_SUCCESS,
-} from "../../constants/productConstant"
-import httpRequest from "../../helpers/request"
+} from '../../constants/productConstant'
 
 
 export const listProducts = () => async (dispatch) => {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HeaderTop = () =>
     <div className='header-top'>
@@ -9,16 +10,16 @@ const HeaderTop = () =>
             <div className='header-top-right ml-auto'>
                 <ul className='d-flex m-0'>
                     <li>
-                        <a href='/'>About</a>
+                        <Link to='/'>About</Link>
                     </li>
                     <li>
-                        <a href='/'>FAQ</a>
+                        <Link to='/'>FAQ</Link>
                     </li>
                     <li>
-                        <a href='/'>Contact</a>
+                        <Link to='/'>Contact</Link>
                     </li>
                     <li>
-                        <a href='/'>Wishlist</a>
+                        <Link to='/'>Wishlist</Link>
                     </li>
                 </ul>
             </div>

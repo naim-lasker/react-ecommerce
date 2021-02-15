@@ -2,7 +2,8 @@ import React, { Fragment } from 'react'
 import HomeBanner from '../../../components/Public/Home/Banner'
 import AllProduct from '../Product/AllProduct'
 
-const Home = () => {
+
+export default () => {
     return (
         <Fragment>
             <HomeBanner />
@@ -10,5 +11,3 @@ const Home = () => {
         </Fragment>
     )
 }
-
-export default Home

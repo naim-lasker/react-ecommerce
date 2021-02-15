@@ -1,25 +1,40 @@
 import React from 'react'
-import { Nav, Navbar } from 'react-bootstrap'
+import { Badge, Nav, Navbar } from 'react-bootstrap'
+import { FaShoppingCart } from 'react-icons/fa'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const HeaderBottom = () => {
+    const cart = useSelector(state => state.cart)
+    const { cartItems } = cart
 
     return (
         <div className='header-bottom'>
             <div className='container'>
                 <Navbar expand="lg" className='p-0'>
-                    <Navbar.Brand href="/">
+                    <Link to="/" className="navbar-brand">
                         <img src='/images/logo.png' alt="" />
-                    </Navbar.Brand>
+                    </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="">Home</Nav.Link>
-                            <Nav.Link href="">Category</Nav.Link>
+                            <Link to="/" className="nav-link">Home</Link>
+                            <Link to="" className="nav-link">Category</Link>
                         </Nav>
 
                         <Nav className="ml-auto">
-                            <Nav.Link href="#home">Login</Nav.Link>
-                            <Nav.Link href="#link">My Cart</Nav.Link>
+                            <Link to="#home" className="nav-link">
+                                Login
+                            </Link>
+                            <Link to="/cart" className="nav-link">
+                                <FaShoppingCart size={18} />
+                                {
+                                    cartItems.length > 0 &&
+                                    <Badge variant="danger" className="cart-badge">
+                                        {cartItems.length}
+                                    </Badge>
+                                }
+                            </Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

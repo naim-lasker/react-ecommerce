@@ -11,15 +11,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { detailsProducts } from '../../../redux/actions/productAction'
 
 
-const ProductDetails = props => {
+export default props => {
     const dispatch = useDispatch()
 
     const productId = props.match.params.id
     const productDetails = useSelector(state => state.productDetails)
 
     const { loading, error, product } = productDetails
-
-    console.log('loading', loading);
 
     const [quantity, setQuantity] = useState(1)
     const currentUrl = window.location.href
@@ -45,6 +43,8 @@ const ProductDetails = props => {
         if (quantity > product.stock) {
             return alert(`Stock is limited. You can only add ${product.stock} item to your cart`)
         }
+
+        props.history.push(`/cart/${productId}?quantity=${quantity}`)
     }
 
 
@@ -221,5 +221,3 @@ const ProductDetails = props => {
         </section>
     )
 }
-
-export default ProductDetails

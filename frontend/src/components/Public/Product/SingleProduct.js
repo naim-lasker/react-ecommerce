@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaHeart, FaShoppingCart } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import { findPercentage, formatAmount } from '../../../helpers/common'
 import ProductRating from './Rating'
 
@@ -15,9 +16,9 @@ const SingleProduct = ({ product }) => {
         <div className="public-single-product">
 
             <figure className="public-product-media">
-                <a href={`/product/${product.id}`}>
+                <Link to={`/product/${product.id}`}>
                     <img src={product.img[0]} alt={product.name} className='img-fluid w-100' height="315" />
-                </a>
+                </Link>
 
                 {
                     product.isNew &&
@@ -27,25 +28,27 @@ const SingleProduct = ({ product }) => {
                 }
 
                 <div className="public-product-action-vertical">
-                    <a href="/" className="public-btn-product-icon" data-toggle="modal" data-target="#addCartModal" title="Add to cart">
+                    <Link to="/" className="public-btn-product-icon" data-toggle="modal" data-target="#addCartModal" title="Add to cart">
                         <FaShoppingCart />
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="public-product-action">
-                    <a href={`/product/${product.id}`} className="public-btn-product public-btn-quickview" title="Quick View">Quick View</a>
+                    <Link to={`/product/${product.id}`} className="public-btn-product public-btn-quickview">
+                        Quick View
+                    </Link>
                 </div>
             </figure>
 
 
             <div className="public-product-info">
-                <a href="/" className="public-btn-wishlist" title="Add to wishlist">
+                <Link to="/" className="public-btn-wishlist" title="Add to wishlist">
                     <FaHeart />
-                </a>
+                </Link>
 
                 <div className='d-flex mb-2'>
                     <div className="mr-2">
-                        <a href="/" className='badge badge-primary'>{product.category}</a>
+                        <Link to="/" className='badge badge-primary'>{product.category}</Link>
                     </div>
                     <div className="public-product-cat">
                         <span>{product.brand}</span>
@@ -53,7 +56,7 @@ const SingleProduct = ({ product }) => {
                 </div>
 
                 <h3 className="public-product-name">
-                    <a href={`/product/${product.id}`}>{product.name}</a>
+                    <Link to={`/product/${product.id}`}>{product.name}</Link>
                 </h3>
 
                 <div className="public-product-price">

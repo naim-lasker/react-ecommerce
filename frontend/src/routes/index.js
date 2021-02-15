@@ -12,7 +12,7 @@ import ProductDetails from "../pages/Public/Product/ProductDetails"
 import Cart from "../pages/Public/Cart"
 
 
-const Routes = () => {
+export default () => {
 
     return (
         <Router history={browserHistory}>
@@ -42,13 +42,10 @@ const Routes = () => {
                     component={Cart}
                     exact
                     layout={PublicMain}
-                    path='/cart'
+                    path='/cart/:id?'
                     title='Cart'
                 />
             </Switch>
         </Router>
     )
 }
-
-
-export default Routes
