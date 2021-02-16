@@ -2,7 +2,7 @@ import httpRequest from '../../helpers/request'
 import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../../constants/cartConstant'
 
 export const addToCart = (productId, quantity) => async (dispatch, getState) => {
-    const { data } = await httpRequest.get(`/api/product/${productId}`, false, null)
+    const { data } = await httpRequest.get(`/api/products/${productId}`, false, null)
 
     dispatch({
         type: CART_ADD_ITEM,
@@ -11,7 +11,7 @@ export const addToCart = (productId, quantity) => async (dispatch, getState) => 
             img: data.img,
             price: data.price,
             stock: data.stock,
-            product: data.id,
+            product: data._id,
             quantity
         }
     })

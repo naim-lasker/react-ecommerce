@@ -17,7 +17,6 @@ export const data = {
     ],
     products: [
         {
-            id: 1,
             isNew: true,
             name: 'Solid pattern in fashion summer dress',
             category: 'Shirt',
@@ -37,7 +36,6 @@ export const data = {
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
         },
         {
-            id: 2,
             isNew: true,
             name: 'White & blue t-shirt',
             category: 'Shirt',
@@ -57,7 +55,6 @@ export const data = {
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
         },
         {
-            id: 3,
             isNew: false,
             name: 'Bata shoe',
             category: 'Shoe',
@@ -77,7 +74,6 @@ export const data = {
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
         },
         {
-            id: 4,
             isNew: false,
             name: 'Adiddas black shoe',
             category: 'Shoe',
@@ -97,7 +93,6 @@ export const data = {
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
         },
         {
-            id: 5,
             isNew: false,
             name: 'Stripes shirt',
             category: 'Shirt',
@@ -117,7 +112,6 @@ export const data = {
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
         },
         {
-            id: 6,
             isNew: false,
             name: 'Lacoste Jeans',
             category: 'Jeans',

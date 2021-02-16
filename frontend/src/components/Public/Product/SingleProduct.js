@@ -16,7 +16,7 @@ const SingleProduct = ({ product }) => {
         <div className="public-single-product">
 
             <figure className="public-product-media">
-                <Link to={`/product/${product.id}`}>
+                <Link to={`/product/${product._id}`}>
                     <img src={product.img[0]} alt={product.name} className='img-fluid w-100' height="315" />
                 </Link>
 
@@ -34,7 +34,7 @@ const SingleProduct = ({ product }) => {
                 </div>
 
                 <div className="public-product-action">
-                    <Link to={`/product/${product.id}`} className="public-btn-product public-btn-quickview">
+                    <Link to={`/product/${product._id}`} className="public-btn-product public-btn-quickview">
                         Quick View
                     </Link>
                 </div>
@@ -56,7 +56,7 @@ const SingleProduct = ({ product }) => {
                 </div>
 
                 <h3 className="public-product-name">
-                    <Link to={`/product/${product.id}`}>{product.name}</Link>
+                    <Link to={`/product/${product._id}`}>{product.name}</Link>
                 </h3>
 
                 <div className="public-product-price">

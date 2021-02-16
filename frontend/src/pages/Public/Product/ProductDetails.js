@@ -15,6 +15,7 @@ export default props => {
     const dispatch = useDispatch()
 
     const productId = props.match.params.id
+    console.log('productId', productId);
     const productDetails = useSelector(state => state.productDetails)
 
     const { loading, error, product } = productDetails
