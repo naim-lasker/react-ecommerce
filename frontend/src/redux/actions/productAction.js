@@ -35,7 +35,6 @@ export const detailsProducts = productId => async (dispatch) => {
 
     try {
         const { data } = await httpRequest.get(`/api/product/${productId}`, false, null)
-        console.log('data', data);
         dispatch({
             type: PRUDUCT_DETAILS_SUCCESS,
             payload: data

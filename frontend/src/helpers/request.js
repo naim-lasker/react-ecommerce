@@ -34,7 +34,6 @@ const client = (token = null) => {
 
 
             }
-            console.log("defaultOptions", defaultOptions)
             return axios.post(url, data, { defaultOptions, ...options })
 
         },
